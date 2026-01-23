@@ -8,17 +8,13 @@ html, body {
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-
-    /* Cambiar imagen de fondo principal aquí */
     background: url('imagenes/fondologin.jpeg') no-repeat center center fixed;
     background-size: cover;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Capa oscura + blur sobre el fondo */
 body::after {
     content: "";
     position: fixed;
@@ -28,41 +24,29 @@ body::after {
     z-index: -2;
 }
 
-/* Título de bienvenida */
 .titulo-bienvenido {
     font-family: "Playfair Display", serif;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
-/* Contenedor principal del login */
 .login-container {
-    background: transparent;
     border-radius: 28px;
     box-shadow: 0 15px 60px rgba(0, 0, 0, 0.45);
     max-width: 1100px;
     width: 92%;
     min-height: 620px;
-    overflow: hidden;
     display: flex;
-
-    /* Efecto glassmorphism */
     backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
 }
 
-/* Lado izquierdo con imagen */
 .left-side {
     flex: 1;
-
-    /* Imagen del panel izquierdo */
     background: url('imagenes/fondologin.jpeg') no-repeat center;
     background-size: cover;
-
     position: relative;
 }
 
-/* Oscurecer imagen del lado izquierdo */
 .left-side::before {
     content: "";
     position: absolute;
@@ -79,7 +63,6 @@ body::after {
     justify-content: center;
 }
 
-/* Lado derecho (formulario) */
 .right-side {
     flex: 1;
     padding: 70px 60px;
@@ -89,16 +72,13 @@ body::after {
     justify-content: center;
 }
 
-/* Inputs */
 .form-control {
     background: transparent !important;
     border: none !important;
     border-bottom: 2px solid rgba(255, 255, 255, 0.65) !important;
-    border-radius: 0 !important;
     color: white !important;
 }
 
-/* Iconos de inputs */
 .input-group-text {
     background: transparent;
     border: none;
@@ -106,11 +86,19 @@ body::after {
     font-size: 1.3rem;
 }
 
-/* Botón login */
-.btn-login {
-    background: #000;
+.btn-login,
+.btn-register {
+    background-color: #302f2e;
+    color: #ffffff;
     border: none;
     border-radius: 10px;
     padding: 14px;
     font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+    background-color: #1f1e1d; /* más oscuro */
 }
